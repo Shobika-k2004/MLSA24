@@ -13,11 +13,8 @@ import PropTypes from "prop-types";
 import devDotToIcon from "../images/socials/devdotto.svg";
 import envelopeIcon from "../images/socials/envelope.svg";
 import gitHubIcon from "../images/socials/github.svg";
-import instagramIcon from "../images/socials/instagram.svg";
 import linkedInIcon from "../images/socials/linkedin.svg";
-import mediumIcon from "../images/socials/medium.svg";
-import twitterIcon from "../images/socials/twitter.svg";
-import youTubeIcon from "../images/socials/youtube.svg";
+
 
 /**
  * 💡 Learning resources
@@ -29,15 +26,11 @@ import youTubeIcon from "../images/socials/youtube.svg";
 const Footer = (props) => {
   const {
     devDotTo,
-    email,
-    gitHub,
-    instagram,
-    linkedIn,
-    medium,
+    email = "shobikadevi41@gmail.com",
+    gitHub = "https://github.com/Shobika-k2004",
+    linkedIn = "https://www.linkedin.com/in/shobika-k-0a1027221/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B0A97JM8iTLSh2XTCMR8teg%3D%3D",
     name,
     primaryColor,
-    twitter,
-    youTube,
   } = props;
 
   return (
@@ -60,6 +53,7 @@ const Footer = (props) => {
           gap: "2.5rem",
         }}
       >
+
         {email && (
           <a href={`mailto:${email}`}>
             <img src={envelopeIcon} alt="email" className="socialIcon" />
@@ -75,15 +69,7 @@ const Footer = (props) => {
             <img src={gitHubIcon} alt="GitHub" className="socialIcon" />
           </a>
         )}
-        {instagram && (
-          <a
-            href={`https://www.instagram.com/${instagram}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagramIcon} alt="Instagram" className="socialIcon" />
-          </a>
-        )}
+
         {linkedIn && (
           <a
             href={`https://www.linkedin.com/in/${linkedIn}`}
@@ -91,25 +77,6 @@ const Footer = (props) => {
             rel="noopener noreferrer"
           >
             <img src={linkedInIcon} alt="LinkedIn" className="socialIcon" />
-          </a>
-        )}
-        {medium && (
-          <a href={`https://medium.com/@${medium}`} target="_blank" rel="noopener noreferrer">
-            <img src={mediumIcon} alt="Medium" className="socialIcon" />
-          </a>
-        )}
-        {twitter && (
-          <a href={`https://twitter.com/${twitter}`} target="_blank" rel="noopener noreferrer">
-            <img src={twitterIcon} alt="Twitter" className="socialIcon" />
-          </a>
-        )}
-        {youTube && (
-          <a
-            href={`https://www.youtube.com/c/${youTube}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={youTubeIcon} alt="YouTube" className="socialIcon" />
           </a>
         )}
       </div>
@@ -128,13 +95,9 @@ Footer.propTypes = {
   devDotTo: PropTypes.string,
   email: PropTypes.string,
   gitHub: PropTypes.string,
-  instagram: PropTypes.string,
   linkedIn: PropTypes.string,
-  medium: PropTypes.string,
   name: PropTypes.string.isRequired,
   primaryColor: PropTypes.string,
-  twitter: PropTypes.string,
-  youTube: PropTypes.string,
 
 };
 
